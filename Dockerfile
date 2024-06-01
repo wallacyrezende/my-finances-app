@@ -8,7 +8,7 @@ RUN npm run build -- --configuration=${CONFIGURATION}
 
 FROM nginx:alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=build /usr/src/app/dist /usr/share/nginx/html
+COPY --from=build /usr/src/app/dist/my-finances-app /usr/share/nginx/html
 ARG PORT
 EXPOSE ${PORT}
 CMD ["nginx", "-g", "daemon off;"]
