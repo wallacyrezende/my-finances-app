@@ -1,0 +1,7 @@
+[build]
+  dockerfile = "./Dockerfile"
+
+[service]
+  name = "my-finances-app-service"
+  build_cmd = "docker build -t my-finances-app-service ."
+  run_cmd = "docker run -p 8080:80 my-finances-app-service"
