@@ -8,7 +8,6 @@ export const environment = {
   facebookId: '392274785662753',
   clientId: 'myappname123',
   clientSecret: 'myappsecret123'
-
 };
 
 /*

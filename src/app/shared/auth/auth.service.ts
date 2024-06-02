@@ -6,8 +6,6 @@ import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { TokenStorageService } from './token-storage.service';
 
-const AUTH_API = 'http://localhost:8765/fn-oauth/oauth/';
-
 @Injectable({
     providedIn: 'root',
 })
@@ -32,7 +30,7 @@ export class AuthService {
         let params = this.factoryParams(email, password);
         return this.http
             .post<Token>(
-                AUTH_API + 'token',
+                environment.apiUrl + '/auth-server/oauth/token',
                 params,
                 this.httpOptions
             )
